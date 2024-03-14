@@ -1,0 +1,4 @@
+name = "PythonCallPrecompileExample"
+uuid = "95f94ae3-ebc2-487b-8548-58a0c140ba5c"
+authors = ["Gustavo Nunes Goretkin <ggoretkin@theaiinstitute.com>"]
+version = "0.1.0"
