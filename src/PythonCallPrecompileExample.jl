@@ -73,8 +73,14 @@ function get_precompilation()
     return precompile_method_instances
 end
 
+module PlaceholderForPrecompilation
+end
 
-# Uncomment this to hook into the precompilation. But it's circular...
+# Uncomment this to hook into the precompilation. But it's circular, and it is giving
+# Precompiling PythonCallPrecompileExample
+#         Info Given PythonCallPrecompileExample was explicitly requested, output will be shown live
+# ERROR: LoadError: Python: Julia: Creating a new global in closed module `Main` (`PythonCallPrecompileExample`) breaks incremental compilation because the side effects will not be permanent.
+
 # @setup_workload begin
 #     ENV["JULIA_CONDAPKG_BACKEND"] = "Null" # use the system installation of Python
 #     using PythonCall: pyexec
@@ -88,12 +94,10 @@ end
 #     ans = jl.PythonCallPrecompileExample.foo(xs)
 #     """
 
-#     module Placeholder
-#     end
 #     @compile_workload begin
 #         # all calls in this block will be precompiled, regardless of whether
 #         # they belong to this package or not (on Julia 1.8 and higher)
-#         pyexec(py_script, Placeholder)
+#         pyexec(py_script, PlaceholderForPrecompilation)
 #     end
 # end
 
