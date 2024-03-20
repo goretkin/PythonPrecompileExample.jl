@@ -6,3 +6,7 @@ version = "0.1.0"
 [deps]
 PrecompileTools = "aea7be01-6a6a-4083-8856-8a6e6704d82a"
 PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
+Serialization = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+
+[compat]
+Serialization = "1.11.0"
